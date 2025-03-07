@@ -1,0 +1,566 @@
+/* General Styles */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Pacifico&display=swap');
+
+:root {
+    --primary-color: #8A2BE2;
+    --secondary-color: #FF6B6B;
+    --accent-color: #FFD700;
+    --dark-color: #2D3748;
+    --light-color: #F7FAFC;
+    --success-color: #48BB78;
+    --gradient-1: linear-gradient(135deg, #8A2BE2, #9370DB);
+    --gradient-2: linear-gradient(135deg, #FF6B6B, #FFA07A);
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --shadow-hover: 0 10px 15px rgba(0, 0, 0, 0.2);
+    --transition: all 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f8f9fa;
+    color: var(--dark-color);
+    line-height: 1.6;
+}
+
+/* Header & Navigation */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 5%;
+    background-color: white;
+    box-shadow: var(--shadow);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo h2 {
+    font-family: 'Pacifico', cursive;
+    color: var(--primary-color);
+    font-size: 1.8rem;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links li {
+    margin: 0 1.5rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--dark-color);
+    font-weight: 500;
+    transition: var(--transition);
+    position: relative;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: var(--primary-color);
+}
+
+.nav-links a.active:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    background: var(--gradient-1);
+    bottom: -5px;
+    left: 0;
+    border-radius: 10px;
+}
+
+.user-icon a {
+    color: var(--primary-color);
+    font-size: 1.3rem;
+    transition: var(--transition);
+}
+
+.user-icon a:hover {
+    color: var(--secondary-color);
+    transform: scale(1.1);
+}
+
+/* Home Page */
+.home-main {
+    padding: 0;
+}
+
+.hero {
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    padding: 2rem 5%;
+    background: linear-gradient(135deg, #f5f7fa, #e4e8ec);
+    overflow: hidden;
+}
+
+.hero-content {
+    flex: 1;
+    padding-right: 2rem;
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    background: var(--gradient-1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    line-height: 1.2;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    color: #4a5568;
+}
+
+.hero-image {
+    flex: 1;
+    position: relative;
+    height: 400px;
+}
+
+.floating-wishes {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    perspective: 1000px;
+}
+
+.wish-card {
+    position: absolute;
+    background: white;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    transform-style: preserve-3d;
+    animation: float 6s infinite ease-in-out;
+    font-weight: 500;
+    color: var(--dark-color);
+    border-left: 4px solid var(--primary-color);
+}
+
+.wish-card:nth-child(1) {
+    top: 20%;
+    left: 10%;
+    animation-delay: 0.5s;
+}
+
+.wish-card:nth-child(2) {
+    top: 50%;
+    left: 40%;
+    animation-delay: 1s;
+    border-left: 4px solid var(--secondary-color);
+}
+
+.wish-card:nth-child(3) {
+    top: 30%;
+    right: 10%;
+    animation-delay: 1.5s;
+    border-left: 4px solid var(--accent-color);
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0) rotate3d(1, 1, 1, 0deg);
+    }
+    50% {
+        transform: translateY(-20px) rotate3d(1, 1, 1, 5deg);
+    }
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 1rem;
+}
+
+.btn {
+    display: inline-block;
+    padding: 0.8rem 1.8rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: var(--transition);
+    cursor: pointer;
+    border: none;
+    text-align: center;
+}
+
+.primary-btn {
+    background: var(--gradient-1);
+    color: white;
+    box-shadow: 0 4px 15px rgba(138, 43, 226, 0.3);
+}
+
+.primary-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(138, 43, 226, 0.4);
+}
+
+.secondary-btn {
+    background: var(--light-color);
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+}
+
+.secondary-btn:hover {
+    background: rgba(138, 43, 226, 0.1);
+    transform: translateY(-3px);
+}
+
+.features {
+    display: flex;
+    justify-content: space-between;
+    padding: 5rem 5%;
+    background-color: white;
+}
+
+.feature-card {
+    flex: 1;
+    padding: 2rem;
+    margin: 0 1rem;
+    text-align: center;
+    background: white;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+}
+
+.feature-card:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-hover);
+}
+
+.feature-card i {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    background: var(--gradient-1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.feature-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+/* Wishlist Page */
+main {
+    padding: 3rem 5%;
+    min-height: calc(100vh - 200px);
+}
+
+.wishlist-container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: var(--shadow);
+}
+
+.wishlist-container h1 {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: var(--primary-color);
+}
+
+.wish-input-container {
+    display: flex;
+    margin-bottom: 2rem;
+}
+
+#wishInput {
+    flex: 1;
+    padding: 1rem;
+    border: 2px solid #e2e8f0;
+    border-radius: 50px;
+    font-size: 1rem;
+    outline: none;
+    transition: var(--transition);
+}
+
+#wishInput:focus {
+    border-color: var(--primary-color);
+}
+
+.add-btn {
+    background: var(--gradient-1);
+    color: white;
+    border: none;
+    border-radius: 50px;
+    padding: 0 1.5rem;
+    margin-left: 1rem;
+    cursor: pointer;
+    transition: var(--transition);
+    font-weight: 500;
+}
+
+.add-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(138, 43, 226, 0.3);
+}
+
+.categories {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+}
+
+.category-btn {
+    background: transparent;
+    border: none;
+    padding: 0.5rem 1rem;
+    margin: 0 0.5rem;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: var(--transition);
+    font-weight: 500;
+    color: var(--dark-color);
+}
+
+.category-btn:hover,
+.category-btn.active {
+    background: var(--primary-color);
+    color: white;
+}
+
+.wish-list {
+    list-style: none;
+}
+
+.wish-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    background: #f8f9fa;
+    border-radius: 10px;
+    transition: var(--transition);
+    border-left: 4px solid var(--primary-color);
+}
+
+.wish-list li:hover {
+    transform: translateX(5px);
+    box-shadow: var(--shadow);
+}
+
+.remove {
+    background: var(--secondary-color);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.remove:hover {
+    transform: scale(1.1);
+    background: #e53e3e;
+}
+
+.empty-state {
+    text-align: center;
+    padding: 4rem 0;
+}
+
+.empty-state i {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    color: #cbd5e0;
+}
+
+.empty-state p {
+    color: #718096;
+}
+
+/* Contact Page */
+.contact-container {
+    display: flex;
+    max-width: 1000px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+}
+
+.contact-info {
+    flex: 1;
+    padding: 3rem;
+    background: var(--gradient-1);
+    color: white;
+}
+
+.contact-info h1 {
+    margin-bottom: 1.5rem;
+    font-size: 2.5rem;
+}
+
+.contact-info p {
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+}
+
+.contact-details {
+    margin-top: 3rem;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.contact-item i {
+    font-size: 1.3rem;
+    margin-right: 1rem;
+}
+
+.contact-form-container {
+    flex: 1.5;
+    padding: 3rem;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border: 2px solid #e2e8f0;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-family: 'Poppins', sans-serif;
+    transition: var(--transition);
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: var(--primary-color);
+    outline: none;
+}
+
+.form-group textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+/* Thank You Page */
+.thank-you-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 70vh;
+}
+
+.thank-you-content {
+    text-align: center;
+    max-width: 600px;
+    padding: 3rem;
+    background: white;
+    border-radius: 15px;
+    box-shadow: var(--shadow);
+}
+
+.thank-you-content i {
+    font-size: 5rem;
+    color: var(--success-color);
+    margin-bottom: 2rem;
+}
+
+.thank-you-content h1 {
+    margin-bottom: 1rem;
+    color: var(--dark-color);
+}
+
+.thank-you-content p {
+    margin-bottom: 2rem;
+    color: #718096;
+}
+
+.thank-you-content .cta-buttons {
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+/* Footer */
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 5%;
+    background: var(--dark-color);
+    color: white;
+}
+
+.social-icons a {
+    color: white;
+    margin-left: 1.5rem;
+    font-size: 1.2rem;
+    transition: var(--transition);
+}
+
+.social-icons a:hover {
+    color: var(--accent-color);
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .hero {
+        flex-direction: column;
+        padding: 3rem 5%;
+    }
+    
+    .hero-content {
+        text-align: center;
+        padding-right: 0;
+        margin-bottom: 3rem;
+    }
+    
+    .cta-buttons {
+        justify-content: center;
+    }
+    
+    .features {
+        flex-direction: column;
+    }
+    
+    .feature-card {
+        margin: 1rem 0;
+    }
+    
+    .contact-container {
+        flex-direction: column;
+    }
+    
+    .nav-links {
+        display: none;
+    }
+}
