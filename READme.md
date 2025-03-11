@@ -27,6 +27,22 @@ Dream Wishlist is a web application that allows users to create and track their 
 2.Track Progress: See how close you are to fulfilling your wishes.<br>
 3.Responsive Design: Optimized for both desktop and mobile devices.<br>
 
+<br>
+<br>
+
+<div style="align-items: center;">
+  <img src="wishlist.png" width="500px" />
+</div>
+
+
+**contact page**
+<br>
+<br>
+
+<div style="align-items: center;">
+  <img src="contact.png" width="500px" />
+</div>
+
 **Technologies Used**
  <br>
  <br>
