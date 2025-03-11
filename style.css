@@ -115,6 +115,7 @@ header {
     margin-bottom: 1rem;
     background: var(--gradient-1);
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
     line-height: 1.2;
 }
@@ -247,6 +248,7 @@ header {
     margin-bottom: 1.5rem;
     background: var(--gradient-1);
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
